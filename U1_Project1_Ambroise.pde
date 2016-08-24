@@ -7,12 +7,11 @@ void setup()
 
 {
   fullScreen();
-  background(0, 0, 0);
-  x = 6;
-  y = 5;
+  x = width/2;
+  y = height/2;
 }
 
-color fillVal = color(126);
+//color fillVal = color(126);
 
 void draw() 
 {
@@ -26,8 +25,12 @@ void draw()
   }
   if (shapeMode ==3)
   {
-    triangle (x, y, x+500, y+500, x+1000,y+1000);
+    triangle (x, y, x-30, y+30, x+60,y+60);
   }
+  if (shapeMode ==4)
+{
+  rect(x,y, 70, 50);
+}
 }
 
 void keyPressed() 
@@ -37,22 +40,22 @@ void keyPressed()
     if (keyCode == LEFT)
     {
       x = x - 15;
-      fill (0, 255, 0);
+     fill(random(255), random(255), random(255));
     }
     if (keyCode == RIGHT)
     {
       x = x + 15;
-      fill (255, 255, 255);
+      fill(random(255), random(255), random(255));
     }
     if (keyCode == UP)
     {
       y = y - 15;
-      fill (0, 0, 255);
+      fill(random(255), random(255), random(255));
     }
     if (keyCode == DOWN)
     {
       y = y +15;
-      fill (255, 0, 0);
+      fill(random(255), random(255), random(255));
     }
   }
   
@@ -68,5 +71,9 @@ void keyPressed()
   if (key == '3')
   {
     shapeMode =3;
+  }
+  if (key == '4')
+  {
+    shapeMode=4;
   }
 }
