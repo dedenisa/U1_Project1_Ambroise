@@ -11,36 +11,40 @@ void setup()
   y = height/2;
   
   fill(0);
-  textSize(10);
-  text("#1 is square",10,20);
+  textSize(15);
+  text("#1 = square",10,27);
   
     fill(0);
-  textSize(10);
-  text("#2 is circle",1380,10);
+  textSize(15);
+  text("#2 = circle",1350,15);
   
   fill(0);
-  textSize(10);
-  text("#3 is triangle",1370,890);
+  textSize(15);
+  text("#3 = triangle",1340,890);
   
    fill(0);
-  textSize(10);
-  text("#4 is rectangle",10,880);
+  textSize(15);
+  text("#4 = rectangle",10,875);
   
    fill(0);
-  textSize(10);
-  text("Up arrow is to go up",10,10);
+  textSize(15);
+  text("Up key = up",10,12);
   
     fill(0);
-  textSize(10);
-  text("Down arrow is to go down",1310,20);
+  textSize(15);
+  text("Down key = down",1305,30);
   
   fill(0);
-  textSize(10);
-  text("Left arrow is to go left",1330,880);
+  textSize(15);
+  text("Left key = left",1330,870);
   
    fill(0);
-  textSize(10);
-  text("Right arrow is to go right",10,890);
+  textSize(15);
+  text("Right key = right",10,890);
+  
+  fill(0);
+  textSize(15);
+  text("Enter = Erase",700,20);
 }
  
 void draw()
@@ -61,15 +65,13 @@ void draw()
   {
     rect(x, y, 10, 17.5);
   }
-  if ( x >= width )
+  if (x<1)
   {
-    xDirection = -1;
+    x=-3;
   }
-  y = y + (xDirection * -1);
-  y = y + (xDirection * 1);
-  if (x <= 0)
+  if (x>width-3)
   {
-    xDirection = 1;
+    x=width-3;
   }
   if (y< 1)
   {
@@ -77,10 +79,9 @@ void draw()
   }
   if (y>height-1)
   {
-    y/=3;
+    y=height-3;
   }
 }
- 
  
 void keyPressed()
 {
@@ -88,24 +89,66 @@ void keyPressed()
   {
     if (keyCode == LEFT)
     {
-      x = x - 10;
+      x = x - 5;
       fill(random(255), random(255), random(255));
     }
     if (keyCode == RIGHT)
     {
-      x = x + 10;
+      x = x + 5;
       fill(random(255), random(255), random(255));
     }
     if (keyCode == UP)
     {
-      y = y - 10;
+      y = y - 5;
       fill(random(255), random(255), random(255));
     }
     if (keyCode == DOWN)
     {
-      y = y +10;
+      y = y +5;
       fill(random(255), random(255), random(255));
-    }   
+    }  
+  }
+    if (key == ENTER)
+    {
+    background(255,255,255);
+      fill(0);
+  textSize(15);
+  text("#1 = square",10,27);
+  
+    fill(0);
+  textSize(15);
+  text("#2 = circle",1350,15);
+  
+  fill(0);
+  textSize(15);
+  text("#3 = triangle",1340,890);
+  
+   fill(0);
+  textSize(15);
+  text("#4 = rectangle",10,875);
+  
+   fill(0);
+  textSize(15);
+  text("Up key = up",10,12);
+  
+    fill(0);
+  textSize(15);
+  text("Down key = down",1305,30);
+  
+  fill(0);
+  textSize(15);
+  text("Left key = left",1330,870);
+  
+   fill(0);
+  textSize(15);
+  text("Right key = right",10,890);
+  
+    fill(0);
+  textSize(15);
+  text("Enter = Erase",700,20);
+  
+  x = width/2;
+  y = height/2;
   }
  
 {
